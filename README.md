@@ -2,7 +2,10 @@
 
 <hr>
 
-Template for a PhD dissertation using Markdown and Pandoc. It can be used to generate both the final pdf document (based on `.md` files under the folder: `chapters/`) and the Beamer slides (based on the markdown files under the folder: `slides/`)
+Template for a PhD dissertation using Markdown and Pandoc. It can be used to generate both the final pdf document (based on `.md` files under the folder: `chapters/`) and the Beamer slides (based on the markdown files under the folder: `slides/`).
+
+
+The goal of this template is to use just Markdown markup to write and produce the entire pdf documents (i.e. no need to handle LaTeX syntax).
 
 
 
@@ -11,7 +14,7 @@ Template for a PhD dissertation using Markdown and Pandoc. It can be used to gen
 Basic structure of the directory:
 
 ```bash
-$ tree
+$ tree --dirsfirst
 .
 ├── assets
 │   ├── default.beamer
@@ -25,7 +28,8 @@ $ tree
 │   ├── 03-ch03.md
 │   ├── 04-ch04.md
 │   ├── 05-ch05.md
-│   └── 06-ch06.md
+│   ├── 06-ch06.md
+│   └── 07-ch07.md
 ├── output
 │   ├── slides.pdf
 │   └── thesis.pdf
@@ -38,7 +42,7 @@ $ tree
 ├── slides.sh
 └── thesis.sh
 
-4 directories, 20 files
+4 directories, 21 files
 ```
 
 <hr>
@@ -49,7 +53,7 @@ $ tree
 - Install [Pandoc](https://pandoc.org/installing.html)
 - LaTeX Engine
 - To add support for Tables/Figures/Equations numbering and reference, install the required packages in `requirements.txt`. To install all at once, run this:
-    - `pip instal -r requirements.txt`
+    - `pip install -r requirements.txt`
 
 
 > NOTE: after installation is completed, make sure pandoc and latex are added to your system PATH.
