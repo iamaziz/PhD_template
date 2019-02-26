@@ -1,0 +1,180 @@
+\documentclass[13pt,ignorenonframetext,]{beamer}
+%% My Adds
+\usepackage[round]{natbib}
+\usepackage[]{hyperref}
+\renewcommand*{\bibfont}{\footnotesize} % bib font size
+\usepackage{color}
+\newcommand{\red}[1]{\textcolor{red}{#1}} % text color \red{foo}
+\newcommand{\blue}[1]{\textcolor{blue}{#1}}
+
+%%%%%
+% \setbeamertemplate{caption}[numbered]
+% \setbeamertemplate{caption label separator}{: }
+% \setbeamercolor{caption name}{fg=normal text.fg}
+
+\setbeamertemplate{caption}{% To disable figure capution
+\begin{beamercolorbox}[wd=.5\paperwidth, sep=.2ex]{block body}\insertcaption%
+\end{beamercolorbox}%
+}% https://tex.stackexchange.com/a/82460
+
+
+\beamertemplatenavigationsymbolsempty
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\newif\ifbibliography
+\usepackage{natbib}
+\bibliographystyle{plainnat}
+\hypersetup{
+            pdftitle={Slides Title},
+            pdfauthor={Author Name Affiliation},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{longtable,booktabs}
+\usepackage{caption}
+% These lines are needed to make table captions work with longtable:
+\makeatletter
+\def\fnum@table{\tablename~\thetable}
+\makeatother
+
+% Prevent slide breaks in the middle of a paragraph:
+\widowpenalties 1 10000
+\raggedbottom
+
+\AtBeginPart{
+  \let\insertpartnumber\relax
+  \let\partname\relax
+  \frame{\partpage}
+}
+\AtBeginSection{
+  \ifbibliography
+  \else
+    \let\insertsectionnumber\relax
+    \let\sectionname\relax
+    \frame{\sectionpage}
+  \fi
+}
+\AtBeginSubsection{
+  \let\insertsubsectionnumber\relax
+  \let\subsectionname\relax
+  \frame{\subsectionpage}
+}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+\usepackage{natbib}
+
+\title{Slides Title}
+\author{Author Name\\
+Affiliation}
+\date{Feb 2019}
+
+\begin{document}
+\frame{\titlepage}
+
+\begin{frame}
+
+\end{frame}
+
+\begin{frame}{SLIDE 1: bullets example}
+
+\begin{block}{This is a bullet}
+
+Some text
+
+\end{block}
+
+\begin{block}{This is another bullet}
+
+Some more text
+
+\end{block}
+
+\end{frame}
+
+\begin{frame}{SLIDE 2: reference example}
+
+\begin{block}{How to cite}
+
+For example, WordNet18 is an old dataset \citep{miller1995wordnet}.
+
+\end{block}
+
+\end{frame}
+
+\begin{frame}{SLIDE 3: table exmaple}
+
+\tiny
+
+\begin{longtable}[]{@{}ccc@{}}
+\caption{Example table with reference
+\citep{miller1995wordnet}}\tabularnewline
+\toprule
+head & relation & tail\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+head & relation & tail\tabularnewline
+\midrule
+\endhead
+\_\_radical\_NN\_1 & \_part\_of & \_\_molecule\_NN\_1\tabularnewline
+\_\_physics\_NN\_1 & \_member\_of\_domain\_topic &
+\_\_molecule\_NN\_1\tabularnewline
+\_\_molecule\_NN\_1 & \_has\_part & \_\_atom\_NN\_1\tabularnewline
+\bottomrule
+\end{longtable}
+
+\end{frame}
+
+\begin{frame}{SLIDE 4: Math example}
+
+\begin{block}{How to add math}
+
+In word2vec's skip-gram model, the goal is to maximize the sum
+log-likelihood given all training vocabulary as target:
+
+\[
+\sum_{t=1}^{T}\sum_{c\in C_t} \log p(w_c | w_t)
+\]
+
+Where:
+
+\[
+p(w_c | w_t) = \frac{exp(w_t^T . w_c)}{\sum_{w_i \in V}{exp(w_t^T w_i)}}
+\]
+
+\end{block}
+
+\end{frame}
+
+\renewcommand\refname{References}
+\begin{frame}[allowframebreaks]{References}
+\bibliographytrue
+\bibliography{/Users/Aziz/Dropbox/thesis/myref.bib}
+\end{frame}
+
+\end{document}
