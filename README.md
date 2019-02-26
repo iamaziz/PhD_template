@@ -1,4 +1,4 @@
-# Markdown-Latex PhD Template
+# Markdown-LaTeX PhD Template
 
 <hr>
 
