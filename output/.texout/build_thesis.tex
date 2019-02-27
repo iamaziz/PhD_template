@@ -204,7 +204,8 @@ XXXX XXXX
 \date{February 2019}
 
 \begin{document}
-\renewcommand\headrule{}
+\renewcommand\headrule{} % remove fancyhdr line at the top
+\pagenumbering{roman}    % starts roman numerials from the conver page
 % Title page
 \maketitle
 
@@ -274,7 +275,6 @@ Pace University, \date{February 2019}
 
 \newpage
 % \thispagestyle{empty}
-\pagenumbering{roman}
 {\setstretch{1.7} % abstract line spacing
 
 \begin{abstract}
@@ -288,9 +288,18 @@ persons nearest to us. Our task must be to free ourselves from this
 prison by widening our circle of compassion to embrace all living
 creatures and the whole of nature in its beauty. (By Einstein)
 \end{abstract}
-
 }
 \newpage
+
+% ---- Acknowledgements page {
+\section*{\centering Acknowledgements}
+\begin{center}
+ % TODO: add your text below
+Alhamdulillah
+\end{center}
+%% --- END of Acknowledgements text}
+
+ % -- end abstract
 
 {
 % Table of Contents page TOC
@@ -314,10 +323,11 @@ creatures and the whole of nature in its beauty. (By Einstein)
 \rhead{\thepage} % page number top right
 \lhead[LO]{\leftmark} % section name top left
 \cfoot{}
-\lfoot{\scriptsize PhD dissertation, \date{February 2019}}
-\rfoot{\scriptsize \author{XXXX XXXX}}
-\pagenumbering{arabic} % restor page numering to Arabic
-\setcounter{page}{0}
+\lfoot{} %\scriptsize PhD dissertation, \date{February 2019}}
+\rfoot{} %\scriptsize \author{XXXX XXXX}}
+\pagenumbering{arabic} % restore page numering to Arabic
+\setcounter{page}{1}
+\doublespacing % make the document double spaced lines
 
 % pandoc-xnos: macro to create a caption without a prefix
 \makeatletter
@@ -392,14 +402,6 @@ creatures and the whole of nature in its beauty. (By Einstein)
   \addtocounter{figure}{-1}
 }
 \makeatother
-
-\thispagestyle{empty} \section*{\centering Acknowledgements}
-
-\begin{center}
-Alhamdulillah
-\end{center}
-
-\doublespacing
 
 \section{Introduction}\label{introduction}
 
@@ -494,7 +496,7 @@ e.g.~book, journal paper, conference \ldots{} etc. Just make sure to add
 the reference's \texttt{BibTex} index to \texttt{assets/myref.bib} file,
 then call its header as follows: \texttt{{[}@altowayan2016word{]}}.
 LaTeX format is possible as well e.g.
-\texttt{\textbackslash{}cite\{altowayan2016word\}}
+\texttt{\textbackslash{}cite\{altowayan2016word\}} {[}\^{}footnote{]}
 
 After compiling the final document it will generate this linked
 reference \citep{altowayan2016word}
@@ -506,6 +508,30 @@ To change the layout or format of any component in the pdf document
 e.g.~tables layout or figures position \ldots{} etc, one will need to
 edit the LaTeX template file \texttt{assets/default.latex} to add and/or
 modify the desired output.
+
+\subsection{How to add a footnote}\label{how-to-add-a-footnote}
+
+To add a footnote just use markdown flavored format. Here is an example:
+
+Google\footnote{Google: \url{https://google.com}} is an awesome website
+for learning just about anything.
+
+In raw markdown, the above is written as follows:
+
+\begin{verbatim}
+Google[^mynote] is an awesome website for learning just about anything.
+[^mynote]: Google: [https://google.com](https://google.com)
+\end{verbatim}
+
+\textbf{Fixed footers}:
+
+To change the template's footers, look inside
+\texttt{assets/default.latex} file for
+\texttt{\textbackslash{}lfoot\{\}} and
+\texttt{\textbackslash{}rfoot\{\}} commands. Add or change the needed
+footer contents inside either command. For example, to make the date
+appear at the bottom left:
+\texttt{\textbackslash{}lfoot\{\textbackslash{}date\{\$date\$\}\}}
 
 \section{Solution Continues}\label{solution-continues}
 

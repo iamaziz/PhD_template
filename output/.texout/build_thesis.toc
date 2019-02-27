@@ -1,5 +1,5 @@
-\contentsline {section}{List of Tables}{iii}{Doc-Start}
-\contentsline {section}{List of Figures}{iv}{Doc-Start}
+\contentsline {section}{List of Tables}{vi}{Doc-Start}
+\contentsline {section}{List of Figures}{vii}{Doc-Start}
 \contentsline {section}{\numberline {1}Introduction}{1}{section.1}
 \contentsline {subsection}{\numberline {1.1}Informal introduction of the research problem with use cases (why it is important, limitations of current solutions, your idea for improving the solution quality)}{1}{subsection.1.1}
 \contentsline {subsection}{\numberline {1.2}Problem Statement (half page summary of research problem with its scope and objectives)}{1}{subsection.1.2}
@@ -12,6 +12,7 @@
 \contentsline {subsection}{\numberline {3.2}How to add a table}{3}{subsection.3.2}
 \contentsline {subsection}{\numberline {3.3}How to cite}{4}{subsection.3.3}
 \contentsline {subsection}{\numberline {3.4}How to change specific format}{4}{subsection.3.4}
+\contentsline {subsection}{\numberline {3.5}How to add a footnote}{4}{subsection.3.5}
 \contentsline {section}{\numberline {4}Solution Continues}{5}{section.4}
 \contentsline {subsection}{\numberline {4.1}Implementation Highlights (may include process to adapt your solution for similar problems -- key for reusable knowledge)}{5}{subsection.4.1}
 \contentsline {section}{\numberline {5}Experimental Validation}{6}{section.5}
