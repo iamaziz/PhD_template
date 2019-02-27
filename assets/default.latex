@@ -348,7 +348,8 @@ $endif$
 \date{$date$}
 
 \begin{document}
-\renewcommand\headrule{}
+\renewcommand\headrule{} % remove fancyhdr line at the top
+\pagenumbering{roman}    % starts roman numerials from the conver page
 $if(title)$
 % Title page
 \maketitle
@@ -420,17 +421,24 @@ $endif$ % end title
 $if(abstract)$
 \newpage
 % \thispagestyle{empty}
-\pagenumbering{roman}
 {\setstretch{1.7} % abstract line spacing
 
 \begin{abstract}
 \large
 $abstract$
 \end{abstract}
-
 }
 \newpage
-$endif$
+
+% ---- Acknowledgements page {
+\section*{\centering Acknowledgements}
+\begin{center}
+ % TODO: add your text below
+Alhamdulillah
+\end{center}
+%% --- END of Acknowledgements text}
+
+$endif$ % -- end abstract
 
 $for(include-before)$
 $include-before$
@@ -465,6 +473,7 @@ $endif$ % end TOC
 \rfoot{\scriptsize \author{$for(author)$$author$$sep$ \and $endfor$}}
 \pagenumbering{arabic} % restor page numering to Arabic
 \setcounter{page}{0}
+\doublespacing % make the document double spaced lines
 
 $if(lot)$
 \listoftables
