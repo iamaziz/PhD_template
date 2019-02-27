@@ -445,7 +445,12 @@ $endif$
 \setcounter{tocdepth}{$toc-depth$}
 \tableofcontents
 \newpage
-
+\thispagestyle{empty}
+\listoftables
+\newpage
+\thispagestyle{empty}
+\listoffigures
+\newpage
 %% --- make page numbering starts at 1 after title and TOC pages
 \setcounter{page}{0}
 
