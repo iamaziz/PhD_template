@@ -26,16 +26,16 @@ $endif$
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhead[CO,CE]{}
-\fancyhead[LO]{\leftmark}
+\fancyhead[]{}
 \fancyfoot[L]{}
 %% -- header --
 % \chead{}
-\rhead{\thepage}
+% \rhead{}
 % \lhead{}
 %% -- footers --
-\cfoot{} % keep to get rid of the bottom page
-\lfoot{\scriptsize PhD dissertation, \date{$date$}}
-\rfoot{\scriptsize \author{$for(author)$$author$$sep$ \and $endfor$}}
+% \cfoot{} % keep to get rid of the bottom page
+% \lfoot{\scriptsize PhD dissertation, \date{$date$}}
+% \rfoot{\scriptsize \author{$for(author)$$author$$sep$ \and $endfor$}}
 %% --- }
 
 
@@ -419,7 +419,8 @@ $endif$ % end title
 
 $if(abstract)$
 \newpage
-\thispagestyle{empty}
+% \thispagestyle{empty}
+\pagenumbering{roman}
 {\setstretch{1.7} % abstract line spacing
 
 \begin{abstract}
@@ -441,21 +442,29 @@ $if(colorlinks)$
 $endif$
 % Table of Contents page TOC
 \newpage
-\thispagestyle{empty}
+% \thispagestyle{empty}
 \setcounter{tocdepth}{$toc-depth$}
 \tableofcontents
 \newpage
-\thispagestyle{empty}
+% \thispagestyle{empty}
 \listoftables
 \newpage
-\thispagestyle{empty}
+% \thispagestyle{empty}
 \listoffigures
 \newpage
-%% --- make page numbering starts at 1 after title and TOC pages
-\setcounter{page}{0}
 
 }
 $endif$ % end TOC
+
+%% restore the regular header/footer and page numbering for the rest of the document
+% \fancyhead[LO]{\leftmark}
+\rhead{\thepage} % page number top right
+\lhead[LO]{\leftmark} % section name top left
+\cfoot{}
+\lfoot{\scriptsize PhD dissertation, \date{$date$}}
+\rfoot{\scriptsize \author{$for(author)$$author$$sep$ \and $endfor$}}
+\pagenumbering{arabic} % restor page numering to Arabic
+\setcounter{page}{0}
 
 $if(lot)$
 \listoftables
