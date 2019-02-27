@@ -23,7 +23,6 @@ $endif$
 
 
 %% --- header-includes {
-% \usepackage{setspace}\setlength\parindent{10pt} % paragraph beginning indent
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhead[CO,CE]{}
@@ -349,6 +348,7 @@ $endif$
 \date{$date$}
 
 \begin{document}
+\renewcommand\headrule{}
 $if(title)$
 % Title page
 \maketitle
