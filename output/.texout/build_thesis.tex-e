@@ -1,11 +1,3 @@
-%% ****************************************************************
-%% A PhD Dissertation LaTeX Template
-%% prepared following Pace University PhD formatting and guidelines
-%% Authored by: A. Aziz Altowayan
-%% Email:       aa10212w@pace.edu
-%% Date:        February 2019
-
-
 \documentclass[]{article}
 % \documentclass[11pt]{article}
 
@@ -32,10 +24,15 @@
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhead[CO,CE]{}
-\fancyfoot[L]{\thepage}
-% -- footers --
-% \cfoot{}
-\lfoot{} % \scriptsize PhD dissertation, \date{February 2019}}
+\fancyhead[LO]{\leftmark}
+\fancyfoot[L]{}
+%% -- header --
+% \chead{}
+\rhead{\thepage}
+% \lhead{}
+%% -- footers --
+\cfoot{} % keep to get rid of the bottom page
+\lfoot{\scriptsize PhD dissertation, \date{February 2019}}
 \rfoot{\scriptsize \author{XXXX XXXX}}
 %% --- }
 
