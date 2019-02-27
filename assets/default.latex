@@ -469,10 +469,10 @@ $endif$ % end TOC
 \rhead{\thepage} % page number top right
 \lhead[LO]{\leftmark} % section name top left
 \cfoot{}
-\lfoot{\scriptsize PhD dissertation, \date{$date$}}
-\rfoot{\scriptsize \author{$for(author)$$author$$sep$ \and $endfor$}}
-\pagenumbering{arabic} % restor page numering to Arabic
-\setcounter{page}{0}
+\lfoot{} %\scriptsize PhD dissertation, \date{$date$}}
+\rfoot{} %\scriptsize \author{$for(author)$$author$$sep$ \and $endfor$}}
+\pagenumbering{arabic} % restore page numering to Arabic
+\setcounter{page}{1}
 \doublespacing % make the document double spaced lines
 
 $if(lot)$
